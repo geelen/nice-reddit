@@ -12,8 +12,12 @@
     %meta(name="breakpoint" data="tablet-landscape" media="(min-width: 769px) and (max-width: 1024px)")
     %meta(name="breakpoint" data="widescreen" media="(min-width: 1025px)")
   %body
-    %article.grid(ng-view)
+    #view(ng-view)
+
     %script(type="text/ng-template" id="article.html")
-      %h1
-        %span.title {{ title || "Loading..." }}
-      %div.comment(ng-bind-html-unsafe="topcomment")
+      %header
+        %a(ng-repeat="(name,url) in articles" ng-href="/show/{{name}}" ng-class="{selected: article == name}") {{ name }}
+      %article.grid
+        %h1(ng-class="article")
+          %span.title {{ title || "Loading..." }}
+        %div.comment(ng-bind-html-unsafe="topcomment")

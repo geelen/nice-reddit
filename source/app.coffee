@@ -1,13 +1,14 @@
 app = angular.module('redditlulz', [])
 
 app.controller "Main", ($scope, $http, $routeParams) ->
-  articles = {
+  $scope.article = $routeParams.article
+  $scope.articles = {
     evolution: "/r/explainlikeimfive/comments/pcxo7/im_a_creationist_because_i_dont_understand"
     obamacare: "/r/explainlikeimfive/comments/vb8vs/eli5_what_exactly_is_obamacare_and_what_did_it"
     'israel-palestine': "/r/explainlikeimfive/comments/j2d9r/ok_heres_a_really_difficult_oneisrael_and"
   }
 
-  url = articles[$routeParams.article]
+  url = $scope.articles[$scope.article]
   if url?
     $http.jsonp("http://www.reddit.com#{url}.json?jsonp=JSON_CALLBACK").success (data) ->
       window.data = data
