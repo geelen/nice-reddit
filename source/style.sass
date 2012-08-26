@@ -27,22 +27,10 @@ header
 h1
   @extend .column-full
   position: relative
-  &::before
-    content: ''
-    position: absolute
-    top: -2%
-    left: -$grid-gutter-width
-    height: 102%
-    width: 100% + $grid-gutter-width * 2
-    z-index: -1
-    opacity: 0.7
-    background: url(http://farm8.staticflickr.com/7124/7546606258_6c1215a66f.jpg) no-repeat center
-    background-size: cover
-    -webkit-filter: grayscale(0.4) blur(3px)
-
   padding: 100px 0
   .breakpoint-phone &
     padding: 20px 0
+
   span.title
     color: darken(white,90%)
     font-family: "Old Standard TT"
@@ -53,6 +41,28 @@ h1
     line-height: 1.5
     padding: 5px
 
+  &::before
+    content: ''
+    position: absolute
+    top: -2%
+    left: -$grid-gutter-width
+    height: 102%
+    width: 100% + $grid-gutter-width * 2
+    z-index: -1
+    opacity: 0.7
+    -webkit-filter: grayscale(0.4) blur(3px)
+    background: url(http://farm6.staticflickr.com/5302/5745797045_d036a494ae_b.jpg) no-repeat center
+    background-size: cover
+
+  &.evolution::before
+    background: url(http://farm8.staticflickr.com/7124/7546606258_6c1215a66f.jpg) no-repeat center
+    background-size: cover
+  &.israel-palestine::before
+    background: url(http://farm1.staticflickr.com/140/391063563_25f99758f8_o.jpg) no-repeat center
+    background-size: cover
+  &.obamacare::before
+    background: url(http://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Obama_signing_health_care-20100323.jpg/1280px-Obama_signing_health_care-20100323.jpg) no-repeat center
+    background-size: cover
 
 .breakpoint-phone .comment
   @extend .column-full
