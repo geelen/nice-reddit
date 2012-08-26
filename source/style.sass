@@ -1,0 +1,39 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+@import source/grid
+@import url(http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700)
+
+article.grid
+  p
+    font-family: "Old Standard TT"
+
+h1
+  position: relative
+  &::before, &::after
+    content: ''
+    position: absolute
+    top: -2%
+    left: -$grid-gutter-width
+    height: 102%
+    width: 100% + $grid-gutter-width * 2
+    z-index: -1
+  &::before
+    background-color: lighten(black, 90%)
+  &::after
+    opacity: 0.6
+    background: url(http://farm8.staticflickr.com/7124/7546606258_6c1215a66f.jpg)
+    background-size: cover
+    -webkit-filter: grayscale(0.4) blur(3px)
+
+  padding: 100px 0
+  font-family: "Old Standard TT"
+  font-weight: 400
+  font-size: 30pt
+  text-shadow: 0 1px 0 darken(white, 50%)
+
+.comment
+
+
