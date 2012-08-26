@@ -22,7 +22,7 @@ h1
     width: 100% + $grid-gutter-width * 2
     z-index: -1
     opacity: 0.7
-    background: url(http://farm8.staticflickr.com/7124/7546606258_6c1215a66f.jpg)
+    background: url(http://farm8.staticflickr.com/7124/7546606258_6c1215a66f.jpg) no-repeat center
     background-size: cover
     -webkit-filter: grayscale(0.4) blur(3px)
 
@@ -38,8 +38,7 @@ h1
     padding: 5px
 
 .comment
-  @extend .column-skip-2
-  @extend .column-8
+  @extend .column-full
   font: 400 15px/23px "Lora"
   color: lighten(black, 10%)
   text-shadow: 0 1px 0 darken(white,2%)
