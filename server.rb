@@ -65,3 +65,7 @@ get '/reddit.json' do
 
   }.to_json
 end
+
+get "*" do
+  haml :index
+end
