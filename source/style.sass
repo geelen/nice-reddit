@@ -4,15 +4,16 @@
   box-sizing: border-box
 
 @import source/grid
-@import url(http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700)
+@import url(http://fonts.googleapis.com/css?family=Old+Standard+TT:400)
+@import url(http://fonts.googleapis.com/css?family=Lora)
 
-article.grid
-  p
-    font-family: "Old Standard TT"
+body
+  background-color: darken(white,4%)
 
 h1
+  @extend .column-full
   position: relative
-  &::before, &::after
+  &::before
     content: ''
     position: absolute
     top: -2%
@@ -20,20 +21,62 @@ h1
     height: 102%
     width: 100% + $grid-gutter-width * 2
     z-index: -1
-  &::before
-    background-color: lighten(black, 90%)
-  &::after
-    opacity: 0.6
+    opacity: 0.7
     background: url(http://farm8.staticflickr.com/7124/7546606258_6c1215a66f.jpg)
     background-size: cover
     -webkit-filter: grayscale(0.4) blur(3px)
 
   padding: 100px 0
-  font-family: "Old Standard TT"
-  font-weight: 400
-  font-size: 30pt
-  text-shadow: 0 1px 0 darken(white, 50%)
+  span.title
+    color: darken(white,90%)
+    font-family: "Old Standard TT"
+    font-weight: 400
+    font-size: 30pt
+    text-shadow: 0 1px 0 darken(white, 30%)
+    background-color: rgba(white, 0.3)
+    line-height: 1.5
+    padding: 5px
 
 .comment
+  @extend .column-skip-2
+  @extend .column-8
+  font: 400 15px/23px "Lora"
+  color: lighten(black, 10%)
+  text-shadow: 0 1px 0 darken(white,2%)
 
+  p
+    margin: 15px 0
 
+  >p:first-of-type
+    &:first-letter
+      font-size: 100px
+      line-height: 90px
+      margin: 0 10px 0 0
+      float: left
+
+  ol,ul
+    width: 90%
+    margin-left: 5%
+    border-left: 4px solid darken(white, 10%)
+    background-color: darken(white, 6%)
+    padding: 10px 5%
+
+    list-style: none
+    counter-reset: li
+    li
+      padding-bottom: 10px
+      margin-bottom: 10px
+      p
+        margin: 0
+      &::before
+        float: left
+        counter-increment: li
+        font-size: 40px
+        line-height: 46px
+        width: 40px
+        text-align: center
+        display: block
+  ol li::before
+    content: counter(li)
+  ul li::before
+    content: '\00B7'
