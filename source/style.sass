@@ -27,6 +27,8 @@ h1
     -webkit-filter: grayscale(0.4) blur(3px)
 
   padding: 100px 0
+  .breakpoint-phone &
+    padding: 20px 0
   span.title
     color: darken(white,90%)
     font-family: "Old Standard TT"
@@ -37,8 +39,20 @@ h1
     line-height: 1.5
     padding: 5px
 
-.comment
+
+.breakpoint-phone .comment
   @extend .column-full
+.breakpoint-tablet-portrait .comment
+  @extend .column-10
+  @extend .column-skip-1
+.breakpoint-tablet-landscape .comment
+  @extend .column-8
+  @extend .column-skip-2
+.breakpoint-widescreen .comment
+  @extend .column-6
+  @extend .column-skip-3
+
+.comment
   font: 400 15px/23px "Lora"
   color: lighten(black, 10%)
   text-shadow: 0 1px 0 darken(white,2%)

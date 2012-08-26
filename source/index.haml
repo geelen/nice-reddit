@@ -1,12 +1,16 @@
 !!! 5
-%html(ng-app="redditlulz")
+%html.breakpoint-phone(ng-app="redditlulz")
   %head
     %script(src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.0.1/angular.min.js')
     %script(src='https://raw.github.com/coreyti/showdown/master/compressed/showdown.js')
+    %script(src='https://raw.github.com/benschwarz/metaquery/master/metaquery.min.js')
     %script(src='/app.js')
-    %link(rel="stylesheet" type="text/css" href="https://raw.github.com/benschwarz/grid/master/grid.min.css?login=geelen&token=f71a893933054eb3ea20a78d3782f826")
     %link(rel="stylesheet" type="text/css" href="/style.css")
-    %meta(name="viewport" content="width=device-width, height=device-height")
+    %meta(name="viewport" content="width=device-width")
+    %meta(name="breakpoint" data="phone" media="(max-width: 480px)")
+    %meta(name="breakpoint" data="tablet-portrait" media="(min-width: 481px) and (max-width: 768px)")
+    %meta(name="breakpoint" data="tablet-landscape" media="(min-width: 769px) and (max-width: 1024px)")
+    %meta(name="breakpoint" data="widescreen" media="(min-width: 1025px)")
   %body(ng-controller="Main")
     %article.grid
       %h1
