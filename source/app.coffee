@@ -6,6 +6,7 @@ app.controller "Main", ($scope, $http, $routeParams) ->
     evolution: "/r/explainlikeimfive/comments/pcxo7/im_a_creationist_because_i_dont_understand"
     obamacare: "/r/explainlikeimfive/comments/vb8vs/eli5_what_exactly_is_obamacare_and_what_did_it"
     'israel-palestine': "/r/explainlikeimfive/comments/j2d9r/ok_heres_a_really_difficult_oneisrael_and"
+    climate: '/r/askscience/comments/reo35/the_discussion_of_climate_change_is_so_poisoned'
   }
 
   url = $scope.articles[$scope.article]
